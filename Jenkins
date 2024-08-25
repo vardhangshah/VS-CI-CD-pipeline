@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying Example' + echo env.WORKSPACE + ' workspace'
+                echo 'Deploying Example' + env.WORKSPACE + ' workspace'
                 script {
                     def today = new Date()
                     def yesterday = today - 1
