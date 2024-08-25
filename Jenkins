@@ -22,12 +22,12 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying Example' + env.WORKSPACE + ' workspace'
+                echo 'Deploying Example - ' + env.WORKSPACE + ' ;workspace'
                 script {
                     def today = new Date()
                     def yesterday = today - 1
                     def daybeforeyesterday = yesterday.previous()
-                    println "Today: " + today.format("MM/dd/yyyy") + "Checking previous date" 
+                    println "Today: " + today.format("MM/dd/yyyy") + " ;Checking previous date" 
                     println "Yesterday: " + yesterday.format("MM/dd/yyyy")
                     println "The Day before yesterday: " + daybeforeyesterday.format("MM/dd/yyyy")
                 } 
