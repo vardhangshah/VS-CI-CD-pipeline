@@ -5,16 +5,28 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Example'
+                echo env.BUILD_ID
+                echo env.WORKSPACE
+                echo env.JOB_NAME
+                echo env.JENKINS_HOME
             }
         }
         stage('Test') {
             steps {
                 echo 'Testing Example'
+                echo env.BUILD_ID
+                echo env.WORKSPACE
+                echo env.JOB_NAME
+                echo env.JENKINS_HOME
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying Example'
+                echo env.BUILD_ID
+                echo env.WORKSPACE
+                echo env.JOB_NAME
+                echo env.JENKINS_HOME
             }
         }
     }
