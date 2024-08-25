@@ -23,10 +23,14 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying Example'
-                echo env.BUILD_ID
-                echo env.WORKSPACE
-                echo env.JOB_NAME
-                echo env.JENKINS_HOME
+                script {
+                    def today = new Date()
+                    def yesterday = today - 1
+                    def daybeforeyesterday = yesterday.previous()
+                    println "Today: " + today.format("MM/dd/yyyy") + " && Yesterday: " +
+                    yesterday.format("MM/dd/yyyy") + " && The Day before yesterday: " +
+                    daybeforeyesterday.format("MM/dd/yyyy")
+                } 
             }
         }
     }
